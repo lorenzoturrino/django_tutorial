@@ -5,8 +5,8 @@ import datetime
 
 
 class Question(models.Model):
-    question_text = models.CharField(max_length=50)
-    pub_date = models.DateTimeField('date published')
+    question_text = models.CharField('enter edgy social marketing question here',max_length=50)
+    pub_date = models.DateTimeField('date when I had this brilliant idea')
 
     def __str__(self):
         return self.question_text
