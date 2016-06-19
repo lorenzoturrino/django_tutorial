@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Question
 
 def index(request):
-    return HttpResponse("Hello world this is index from polls")
+    latest_questions = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_questions])
+    return HttpResponse(output)
 
 def detail(request, question_id):
     response = "You're looking at question %s."
