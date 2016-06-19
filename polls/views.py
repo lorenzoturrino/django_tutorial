@@ -16,9 +16,9 @@ def index(request):
     # return HttpResponse(output)
 
 
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
+def detail(request, para1):
+    question = get_object_or_404(Question, pk=para1)
+    return render(request, 'polls/details.html', {'question': question})
 
     # try:
     #     question = Question.objects.get(pk=question_id)
